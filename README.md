@@ -8,3 +8,7 @@
 
 2. Command to run the app:  
 ```streamlit run app.py```
+
+---
+### Live website:  
+https://multiagent-trip-planner.streamlit.app/
