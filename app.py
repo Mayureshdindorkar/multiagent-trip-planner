@@ -7,6 +7,10 @@ from dotenv import load_dotenv
 import torch
 import os
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 load_dotenv()
 torch.classes.__path__ = [os.path.join(torch.__path__[0], torch.classes.__file__)]  # To avoid a error
 
