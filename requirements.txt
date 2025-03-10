@@ -5,6 +5,6 @@ accelerate==1.4.0
 crewai==0.102.0
 langchain==0.3.20
 python-dotenv==1.0.1
-torch==2.6.0+cu126
+torch==2.6.0
 transformers==4.46.3
 pysqlite3-binary
