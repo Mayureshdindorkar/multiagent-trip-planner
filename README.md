@@ -11,6 +11,6 @@
 
 ---
 ### Live website:  
-https://trip-planner-latest-edgbukgl6vylxvev7u3yfw.streamlit.app/
+https://multiagent-trip-planner.streamlit.app/
 ---
 
