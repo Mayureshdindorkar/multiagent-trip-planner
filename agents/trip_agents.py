@@ -20,6 +20,7 @@ class TripAgents:
 
         # Hugging Face Model ID
         self.model_id = "huggingface/mistralai/Mistral-7B-Instruct-v0.3"
+        self.api_base = "https://router.huggingface.co/v1/chat/completions"
 
     def _create_llm(self):
         """Helper method to create LLM instance with proper configuration"""
