@@ -1,13 +1,11 @@
 from crewai.tools import BaseTool
 from langchain_community.tools import DuckDuckGoSearchRun
+from pydantic import Field
 
 class MyCustomDuckDuckGoTool(BaseTool):
     name: str = "DuckDuckGo Search Tool"
     description: str = "Search the web for a given query."
-    
-    def __init__(self):
-        super().__init__()
-        self.duckduckgo_tool = DuckDuckGoSearchRun(region="us-en")
+    duckduckgo_tool: DuckDuckGoSearchRun = Field(default_factory=lambda: DuckDuckGoSearchRun(region="us-en"))
 
     def _run(self, query: str) -> str:
         try:
@@ -15,6 +13,3 @@ class MyCustomDuckDuckGoTool(BaseTool):
             return response
         except Exception as e:
             return f"Search error: {str(e)}"
-
-
-
