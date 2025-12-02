@@ -19,7 +19,7 @@ class TripAgents:
             raise ValueError("HUGGINGFACE_API_KEY is missing. Please set it in your environment variables.")
 
         # Hugging Face Model ID
-        self.model_id = "huggingface/mistralai/Mistral-7B-Instruct-v0.3"
+        self.model_id = "huggingface/mistralai/Ministral-3-8B-Instruct-2512"
         self.api_base = "https://router.huggingface.co/v1"
 
     def local_expert_agent(self):
