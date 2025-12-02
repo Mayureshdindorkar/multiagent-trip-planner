@@ -38,7 +38,7 @@ class TripAgents:
             backstory="""A knowledgeable local guide with extensive information
             about the city, its attractions, and customs.""",
             tools=[MyCustomDuckDuckGoTool()],
-            llm=_create_llm(),
+            llm=self._create_llm(),
             verbose=True,
             allow_delegation=False,
             max_iter=4,
@@ -52,7 +52,7 @@ class TripAgents:
             backstory="""Specialist in travel planning and logistics with 
             decades of experience""",
             tools=[MyCustomDuckDuckGoTool()],
-            llm=_create_llm(),
+            llm=self._create_llm(),
             verbose=True,
             allow_delegation=False,
             max_iter=4,
