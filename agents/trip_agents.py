@@ -21,6 +21,16 @@ class TripAgents:
         # Hugging Face Model ID
         self.model_id = "huggingface/mistralai/Mistral-7B-Instruct-v0.3"
 
+    def _create_llm(self):
+        """Helper method to create LLM instance with proper configuration"""
+        return LLM(
+            model=self.model_id,
+            api_key=self.hf_api_key,
+            base_url=self.api_base,
+            temperature=0.7,
+            max_tokens=1024
+        )
+    
     def local_expert_agent(self):
         return Agent(
             role='Local Expert at this city',
@@ -28,7 +38,7 @@ class TripAgents:
             backstory="""A knowledgeable local guide with extensive information
             about the city, its attractions, and customs.""",
             tools=[MyCustomDuckDuckGoTool()],
-            llm=LLM(model=self.model_id, api_key=self.hf_api_key, api_base='https://router.huggingface.co/v1/chat/completions'),
+            llm=_create_llm(),
             verbose=True,
             allow_delegation=False,
             max_iter=4,
@@ -42,7 +52,7 @@ class TripAgents:
             backstory="""Specialist in travel planning and logistics with 
             decades of experience""",
             tools=[MyCustomDuckDuckGoTool()],
-            llm=LLM(model=self.model_id, api_key=self.hf_api_key, api_base='https://router.huggingface.co/v1/chat/completions'),
+            llm=_create_llm(),
             verbose=True,
             allow_delegation=False,
             max_iter=4,
