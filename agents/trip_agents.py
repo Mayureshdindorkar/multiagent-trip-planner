@@ -28,7 +28,7 @@ class TripAgents:
             backstory="""A knowledgeable local guide with extensive information
             about the city, its attractions, and customs.""",
             tools=[MyCustomDuckDuckGoTool()],
-            llm=LLM(model=self.model_id, api_key=self.hf_api_key, api_base=('https://api-inference.huggingface.co/models/mistralai/Ministral-3-8B-Instruct-2512')),
+            llm=LLM(model=self.model_id, api_key=self.hf_api_key, api_base=('https://router.huggingface.co/models/mistralai/Ministral-3-8B-Instruct-2512')),
             verbose=True,
             allow_delegation=False,
             max_iter=4,
@@ -42,7 +42,7 @@ class TripAgents:
             backstory="""Specialist in travel planning and logistics with 
             decades of experience""",
             tools=[MyCustomDuckDuckGoTool()],
-            llm=LLM(model=self.model_id, api_key=self.hf_api_key, api_base=('https://api-inference.huggingface.co/models/mistralai/Ministral-3-8B-Instruct-2512')),
+            llm=LLM(model=self.model_id, api_key=self.hf_api_key, api_base=('https://router.huggingface.co/models/mistralai/Ministral-3-8B-Instruct-2512')),
             verbose=True,
             allow_delegation=False,
             max_iter=4,
