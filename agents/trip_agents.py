@@ -12,22 +12,15 @@ class TripAgents:
 
     def __init__(self):
         load_dotenv()
-        # self.hf_api_key = os.getenv("HUGGINGFACE_API_KEY")    # Uncomment this line, while running locally
-        self.hf_api_key = st.secrets["HUGGINGFACE_API_KEY"]   # Uncomment this line, while running on streamlit cloud
-
-        if not self.hf_api_key:
-            raise ValueError("HUGGINGFACE_API_KEY is missing. Please set it in your environment variables.")
-
-        # Hugging Face Model ID
-        self.model_id = "huggingface/mistralai/Mistral-7B-Instruct-v0.3"
-        self.api_base = "https://router.huggingface.co/v1/chat/completions"
+        self.openai_api_key = st.secrets["OPENAI_API_KEY"]
+        if not self.openai_api_key:
+            raise ValueError("OPENAI_API_KEY is missing. Please set it in your environment variables.")
 
     def _create_llm(self):
         """Helper method to create LLM instance with proper configuration"""
         return LLM(
-            model=self.model_id,
-            api_key=self.hf_api_key,
-            base_url=self.api_base,
+            model="openai/gpt-4o",
+            api_key=self.openai_api_key,
             temperature=0.7,
             max_tokens=1024
         )
