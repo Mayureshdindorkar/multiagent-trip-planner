@@ -20,6 +20,7 @@ class TripAgents:
 
         # Hugging Face Model ID
         self.model_id = "huggingface/mistralai/Ministral-3-8B-Instruct-2512"
+        self.hf_router_url = "https://router.huggingface.co/v1/chat/completions"
 
     def local_expert_agent(self):
         return Agent(
@@ -28,7 +29,7 @@ class TripAgents:
             backstory="""A knowledgeable local guide with extensive information
             about the city, its attractions, and customs.""",
             tools=[MyCustomDuckDuckGoTool()],
-            llm=LLM(model=self.model_id, api_key=self.hf_api_key),
+            llm=LLM(model=self.model_id, api_key=self.hf_api_key, base_url=self.hf_router_url),
             verbose=True,
             allow_delegation=False,
             max_iter=4,
@@ -42,7 +43,7 @@ class TripAgents:
             backstory="""Specialist in travel planning and logistics with 
             decades of experience""",
             tools=[MyCustomDuckDuckGoTool()],
-            llm=LLM(model=self.model_id, api_key=self.hf_api_key),
+            llm=LLM(model=self.model_id, api_key=self.hf_api_key, base_url=self.hf_router_url),
             verbose=True,
             allow_delegation=False,
             max_iter=4,
