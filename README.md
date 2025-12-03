@@ -14,4 +14,4 @@
 https://multiagent-trip-planner.streamlit.app/
 ---
 
-[![Demo Image](tripplanner1.png)](https://multiagent-trip-planner.streamlit.app/)
+[![Demo Image](trip-planner.png)](https://multiagent-trip-planner.streamlit.app/)
